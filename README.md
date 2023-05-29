@@ -1,3 +1,5 @@
+# paw_tugasAkhir
+
 Daftar Isi
 `[#Login]`
 `[#Register]`
@@ -5,7 +7,9 @@ Daftar Isi
 `[#Inventory]`
 `[#Supplyer]`
 
-# Login
+Tugas Akhir Mata kuliah Pengembangan Aplikasi Web
+
+#Login
 
 - username
 - password
@@ -40,7 +44,7 @@ Daftar Isi
 - add inventory
 - remove inventory
 
-# Supplyer
+#Supply
 
 - id supplyer
 - name supplyer
