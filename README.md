@@ -1,11 +1,11 @@
 # paw_tugasAkhir
 
 Daftar Isi
-`[#Login]`
-`[#Register]`
-`[#Dashboard]`
-`[#Inventory]`
-`[#Supplyer]`
+`[# Login]`
+`[# Register]`
+`[# Dashboard]`
+`[# Inventory]`
+`[# Supplyer]`
 
 Tugas Akhir Mata kuliah Pengembangan Aplikasi Web
 
