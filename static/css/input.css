@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-hover {
+    @apply flex items-center justify-center px-2 py-2 hover:rounded-md hover:bg-slate-200;
+  }
+}
