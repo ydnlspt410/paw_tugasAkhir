@@ -2,21 +2,21 @@
 
 Tugas Akhir Mata kuliah Pengembangan Aplikasi Web
 
-#Login
+# Login
 
 - username
 - password
 - forgot password
 - submit
 
-#Register
+# Register
 
 - username
 - password
 - verified
 - submit
 
-#Dashboard
+# Dashboard
 
 - table history
 - search
@@ -27,7 +27,7 @@ Tugas Akhir Mata kuliah Pengembangan Aplikasi Web
 - date
 - amount
 
-#Inventory
+# Inventory
 
 - id inventory
 - name inventory
@@ -37,7 +37,7 @@ Tugas Akhir Mata kuliah Pengembangan Aplikasi Web
 - add inventory
 - remove inventory
 
-#Supply
+# Supply
 
 - id supplyer
 - name supplyer
