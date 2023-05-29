@@ -1,38 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../static/css/output.css" rel="stylesheet" />
   </head>
-  <body>
-    <header class="bg-gray-800 py-4">
-      <div class="container mx-auto px-4">
-        <h1 class="text-white text-2xl font-bold">Dashboard</h1>
-      </div>
-    </header>
-
-    <main class="container mx-auto mt-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white p-4 shadow-md">
-          <h2 class="text-xl font-bold">Widget 1</h2>
-          <p>Some content here...</p>
+  <body class="container">
+    <section class="h-full w-full bg-slate-500">
+      <nav class="m-3 flex items-center justify-between px-8 py-3">
+        <p class="items-center justify-center text-xl text-white">
+          Web Inventory
+        </p>
+        <div class="flex text-sm text-white">
+          <ul class="mr-2 flex items-center">
+            <li class="mr-2">Home</li>
+            <li>About</li>
+          </ul>
+          <button class="mr-2 p-2">Log in</button>
+          <button class="p-2">Register</button>
         </div>
-        <div class="bg-white p-4 shadow-md">
-          <h2 class="text-xl font-bold">Widget 2</h2>
-          <p>Some content here...</p>
-        </div>
-        <div class="bg-white p-4 shadow-md">
-          <h2 class="text-xl font-bold">Widget 3</h2>
-          <p>Some content here...</p>
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-gray-200 py-4 mt-8">
-      <div class="container mx-auto px-4">
-        <p class="text-gray-700">Footer content goes here...</p>
-      </div>
-    </footer>
+      </nav>
+    </section>
   </body>
 </html>
