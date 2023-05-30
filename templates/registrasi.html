@@ -36,10 +36,10 @@
         </div>
       </header>
       <div
-        class="relative z-10 mx-auto mt-[25vh] block w-[400px] max-w-full whitespace-normal rounded-lg p-3 shadow outline-0"
+        class="min-w-sm relative z-10 mx-auto mt-[25vh] block w-[400px] max-w-full whitespace-normal rounded-lg p-5 shadow outline-0"
       >
         <div class="flex flex-wrap items-center">
-          <h3 class="text-xl font-semibold text-blue-600">Mendaftar</h3>
+          <h3 class="text-2xl font-semibold text-blue-600">Daftar</h3>
         </div>
         <div class="block w-auto">
           <p class="text-sm text-slate-500">
@@ -48,8 +48,22 @@
           </p>
           <form action="" novalidate="novalidate" class="block">
             <div
-              class="mb-4 flex max-w-full items-start text-left text-base tracking-normal"
-            ></div>
+              class="relative mb-4 flex max-w-full items-start text-left text-base font-bold tracking-normal"
+            >
+              <div class="flex h-auto w-full min-w-0 flex-col flex-wrap">
+                <div
+                  class="relative mb-2 cursor-text border-r-inherit py-3 transition-all duration-300"
+                >
+                  <fieldset aria-hidden="true">
+                    <legend class="w-0 pe-1 ps-1 text-start leading-3">
+                      <span class="translate-0 font-md text-sm text-blue-600"
+                        >Email</span
+                      >
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
       </div>
