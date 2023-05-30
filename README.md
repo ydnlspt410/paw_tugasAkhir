@@ -1,13 +1,14 @@
 # paw_tugasAkhir
 
-Daftar Isi
-[Login](#login)
-[Register](#register)
-[Dashboard](#dashboard)
-[#Inventory](#inventory)
-[#Supplyer](#supplyer)
+Web Inventory adalah sebuah web app yang bertujuan untuk menyimpan data pemasukan dan pengeluaran inventaris yang berfokus pada besi-besi an.
 
-Tugas Akhir Mata kuliah Pengembangan Aplikasi Web
+Daftar Isi
+
+1. [Login](#login)
+2. [Register](#register)
+3. [Dashboard](#dashboard)
+4. [Inventory](#inventory)
+5. [Supplyer](#supplyer)
 
 ## Login
 
