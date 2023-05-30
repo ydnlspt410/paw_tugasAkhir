@@ -2,7 +2,7 @@
 
 Web Inventory adalah sebuah web app yang bertujuan untuk menyimpan data pemasukan dan pengeluaran inventaris yang berfokus pada besi-besi an.
 
-Daftar Isi
+## Daftar Isi
 
 1. [Login](#login)
 2. [Register](#register)
