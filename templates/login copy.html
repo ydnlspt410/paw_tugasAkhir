@@ -36,28 +36,30 @@
         </div>
       </header>
       <div
-        class="tracking-tigh inset-x-0 top-full mx-auto my-auto flex w-[400px] max-w-full origin-top scale-100 flex-col justify-center whitespace-normal rounded-2xl bg-white p-3 px-6 py-8 opacity-100 shadow outline-0 ring-1 ring-slate-900/5"
+        class="tracking-tigh absolute inset-x-0 top-full my-auto flex origin-top scale-100 flex-col items-center justify-center rounded-2xl bg-white px-6 py-8 opacity-100 shadow-xl ring-1 ring-slate-900/5"
       >
         <div class="flex flex-wrap items-center">
-          <h3 class="mb-1 text-2xl font-semibold text-blue-600">Masuk</h3>
+          <h3 class="text-xl font-semibold text-blue-600">Masuk</h3>
         </div>
-        <div class="flex w-auto flex-col">
+        <div class="block w-auto">
           <p class="text-sm text-slate-500">
             Selamat Datang kembali! Silahkan masuk dengan alamat email dan kata
             sandi anda.
           </p>
-          <form class="grid grid-cols-1 gap-y-8 pt-10">
+          <form>
             <!-- Email input -->
-            <div class="">
-              <label class="mb-3 block text-sm font-medium text-blue-600"
-                >Email address
-              </label>
+            <div class="relative mb-6" data-te-input-wrapper-init>
               <input
-                type="email"
-                class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 sm:text-sm"
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput3"
                 placeholder="Email address"
               />
+              <label
+                for="exampleFormControlInput3"
+                class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+                >Email address
+              </label>
             </div>
 
             <!-- Password input -->
