@@ -16,7 +16,7 @@ class InventarisasiBesi:
     def openDB(self):
         global db, cursor
         db = pymysql.connect(host=config.DB_HOST, user=config.DB_USER, password=config.DB_PASS, database=config.DB_NAME)
-        cursor = db,cursor()
+        cursor = db.cursor()
 
     def closeDB(self):
         global db, cursor
