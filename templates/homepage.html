@@ -13,7 +13,7 @@
     />
   </head>
   <body class="flex h-full flex-col font-['Lexend']">
-    <div class="container block">
+    <div class="container block" id="blur">
       <header class="py-10">
         <div class="mx-5 max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav class="relative z-50 flex justify-between">
@@ -41,7 +41,8 @@
             <div class="flex items-center gap-x-5 md:gap-x-8">
               <div class="hidden md:block">
                 <a
-                  href="./login.html"
+                  href="#"
+                  onclick="toggle()"
                   class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                   >Masuk</a
                 >
@@ -223,7 +224,6 @@
         </div>
       </main>
     </div>
-    <script src="./../static/js/content.js"></script>
-    <script src="./../static/js/homepage.js"></script>
+    <script src="./../static/js/script.js"></script>
   </body>
 </html>

@@ -7,3 +7,18 @@
     @apply flex items-center justify-center px-2 py-2 hover:rounded-md hover:bg-slate-200;
   }
 }
+
+@layer utilities {
+  #blur.active {
+    @apply pointer-events-none select-none blur;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+}
