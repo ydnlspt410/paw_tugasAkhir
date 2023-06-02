@@ -11,17 +11,13 @@
       rel="stylesheet"
     />
   </head>
-  <body class="flex h-full flex-col bg-gray-100 font-['Lexend']">
+  <body class="flex h-full flex-col bg-slate-100 font-['Lexend']">
     <div class="container mx-auto flex items-center justify-center py-20">
       <form
         class="mx-auto w-full max-w-sm rounded-lg bg-white p-8 shadow ring-1 ring-blue-100 sm:p-6"
       >
         <div class="mb-6">
           <h1 class="mb-2 text-2xl font-bold text-blue-500">
-            Form Pendaftaran
-          </h1>
-          <p class="text-sm font-normal text-slate-500">
-            Selamat datang di
             <span class="relative whitespace-nowrap text-blue-600"
               ><svg
                 aria-hidden="true"
@@ -32,37 +28,29 @@
                 <path
                   d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"
                 ></path></svg
+              ><span class="relative text-blue-500">Masuk</span></span
+            >
+          </h1>
+          <p class="text-sm font-normal text-slate-500">
+            Selamat datang kembali di
+            <span class="relative whitespace-nowrap text-blue-600"
               ><span class="relative font-medium text-slate-800"
                 >Web<span class="text-blue-500"> Inventory</span></span
               ></span
             >
-            ! Silahkan input data diri Anda.
+            ! Silahkan masukan username dan password Anda.
           </p>
         </div>
         <div class="mb-4">
           <label class="mb-2 block text-sm font-medium text-gray-700" for="name"
-            >Nama</label
+            >Username</label
           >
           <input
             class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
             type="text"
             id="name"
             name="name"
-            placeholder="Nama"
-          />
-        </div>
-        <div class="mb-4">
-          <label
-            class="mb-2 block text-sm font-medium text-gray-700"
-            for="email"
-            >Email</label
-          >
-          <input
-            class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="email"
+            placeholder="Username"
           />
         </div>
         <div class="mb-4">
@@ -79,12 +67,18 @@
             placeholder="password"
           />
         </div>
-        <a href="dash-admin.html">
+        <div class="mb-4">
+          <p class="mb-2 block text-sm font-normal text-gray-700">
+            Belum mempunyai akun?
+            <a href="./registrasi.html" class="text-blue-500">Daftar</a>
+          </p>
+        </div>
+        <a href="./dash-admin.html">
           <button
-            class="w-full rounded-lg bg-indigo-500 px-4 py-2 text-base font-normal text-white transition duration-300 hover:bg-indigo-600"
+            class="w-full rounded-lg bg-blue-500 px-4 py-2 text-base font-normal text-white transition duration-300 hover:bg-blue-600"
             type="submit"
           >
-            Daftar
+            Masuk
           </button>
         </a>
       </form>
