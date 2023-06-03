@@ -38,15 +38,15 @@ def add_user(username, email, password, no_telp):
     cursor = usr.cursor()
 
     # Query untuk menambahkan pengguna baru
-    query = "INSERT INTO Register (username, password,email) VALUES (%s, %s, %s)"
+    query = "INSERT INTO registrasi (username, password, email, no_telp) VALUES (%s, %s, %s)"
     cursor.execute(query, (username, email, password, no_telp))
     usr.commit()
 
     usr.close()
 
 
-# fungsi untuk menampilkan semua data pada tabel register
-def get_all_register():
+# fungsi untuk menampilkan semua data pada tabel registrasi
+def get_all_registrasi():
     reg = connect_db()
     cursor = reg.cursor()
 
@@ -90,9 +90,10 @@ def login():
 def registrasi():
     if request.method == "POST":
         username = request.form["username"]
-        email = request.fotm["email"]
-        password = request.form["password"]
+        email = request.form["email"]
         no_telp = request.form["no_telp"]
+        password = request.form["password"]
+
 
         # verifikasi apakah username sudah digunakan
         db = connect_db()
@@ -103,14 +104,14 @@ def registrasi():
 
         if result:
             error = "Username sudah digunakan"
-            return render_template("register.html", error=error)
+            return render_template("registrasi.html", error=error)
 
         # menambahkan pengguna baru
         add_user(username, email, password, no_telp)
         session["username"] = username
         return redirect("/login")
 
-    return render_template("register.html")
+    return render_template("registrasi.html")
 
 
 if __name__ == "__main__":
