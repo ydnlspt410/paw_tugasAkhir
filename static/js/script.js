@@ -1,1 +1,0 @@
-// Masih kopong gaes!!!

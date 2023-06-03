@@ -18,10 +18,10 @@
   }
 
   ::-webkit-scrollbar {
-    width: 2px;
+    width: 1px;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-lg bg-blue-600;
+    @apply rounded-lg bg-blue-500;
   }
 }
