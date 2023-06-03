@@ -11,7 +11,7 @@ def connect_db():
         host='localhost',
         user='root',
         password='', #kosongkan punya kalian kalau ga ada password di phpmyadmin
-        database='pawl_tugas' #nama database yang kalian buat 
+        database='web' #nama database yang kalian buat 
     )
     return db
 
@@ -101,10 +101,6 @@ def registrasi():
         return redirect('/login')
     
     return render_template('register.html')
-
-@app.route("/dash-admin")
-def dash_admin ():
-    return render_template("index.html")
 
 
 if __name__ == "__main__":
