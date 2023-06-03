@@ -12,7 +12,7 @@ def connect_db():
         host="localhost",
         user="root",
         password="",  # kosongkan punya kalian kalau ga ada password di phpmyadmin
-        database="web",  # nama database yang kalian buat
+        database="tugas_pawl",  # nama database yang kalian buat
     )
     return db
 
