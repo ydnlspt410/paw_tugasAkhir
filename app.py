@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, session
 import pymysql
+import config
 
 
 app = Flask(__name__)
@@ -8,47 +9,47 @@ app.secret_key = "123456789"
 
 # Fungsi koneksi database
 def connect_db():
-    db = pymysql.connect(
-        host="localhost",
-        user="root",
-        password="",  # kosongkan punya kalian kalau ga ada password di phpmyadmin
-        database="pawl",  # nama database yang kalian buat
+    connection = pymysql.connect(
+        host=config.DB_HOST,
+        user=config.DB_NAME,
+        password=config.DB_PASS,  # kosongkan punya kalian kalau ga ada password di phpmyadmin
+        database=config.DB_NAME  # nama database yang kalian buat
     )
-    return db
+    return connection
 
 
 # Fungsi untuk memeriksa keberhasilan login
 def check_login(username, password):
-    db = connect_db()
-    cursor = db.cursor()
+    connection = connect_db()
+    cursor = connection.cursor()
 
     # Query untuk memeriksa username dan password
     query = "SELECT * FROM t_kasir WHERE username=%s AND password=%s"
     cursor.execute(query, (username, password))
     result = cursor.fetchone()
 
-    db.close()
+    connection.close()
 
     return result
 
 
 # Fungsi untuk menambahkan pengguna baru
 def add_user(username, email, no_telpon, password):
-    usr = connect_db()
-    cursor = usr.cursor()
+    connection = connect_db()
+    cursor = connection.cursor()
 
     # Query untuk menambahkan pengguna baru
-    query = "INSERT INTO Register (username, email, no_telpon, password) VALUES (%s,%s, %s, %s)"
+    query = "INSERT INTO t_kasir (username, email, no_telpon, password) VALUES (%s,%s, %s, %s)"
     cursor.execute(query, (username, email, no_telpon, password))
-    usr.commit()
+    connection.commit()
 
-    usr.close()
+    connection.close()
 
 
 # fungsi untuk menampilkan semua data pada tabel register
 def get_all_register():
-    reg = connect_db()
-    cursor = reg.cursor()
+    connection = connect_db()
+    cursor = connection.cursor()
 
     # query untuk menampilkan
     query = "SELECT * FROM t_kasir"
@@ -57,7 +58,7 @@ def get_all_register():
     )
     result = cursor.fetchall()
 
-    reg.close()
+    connection.close()
 
     return result
 
@@ -90,7 +91,7 @@ def login():
 def registrasi():
     if request.method == "POST":
         username = request.form["username"]
-        email = request.fotm["email"]
+        email = request.form["email"]
         no_telpon = request.form["no_telpon"]
         password = request.form["password"]
 
@@ -111,7 +112,7 @@ def registrasi():
         session["username"] = username
         return redirect("/login")
 
-    return render_template("register.html")
+    return render_template("registrasi.html")
 
 
 if __name__ == "__main__":
