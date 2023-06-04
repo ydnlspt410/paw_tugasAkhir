@@ -12,7 +12,7 @@ def connect_db():
         host="localhost",
         user="root",
         password="",  # kosongkan punya kalian kalau ga ada password di phpmyadmin
-        database="tugas_pawl",  # nama database yang kalian buat
+        database="pawl",  # nama database yang kalian buat
     )
     return db
 
@@ -23,7 +23,7 @@ def check_login(username, password):
     cursor = db.cursor()
 
     # Query untuk memeriksa username dan password
-    query = "SELECT * FROM t_users WHERE username=%s AND password=%s"
+    query = "SELECT * FROM t_kasir WHERE username=%s AND password=%s"
     cursor.execute(query, (username, password))
     result = cursor.fetchone()
 
@@ -33,13 +33,13 @@ def check_login(username, password):
 
 
 # Fungsi untuk menambahkan pengguna baru
-def add_user(username, email, password, no_telp):
+def add_user(username, email, no_telpon, password):
     usr = connect_db()
     cursor = usr.cursor()
 
     # Query untuk menambahkan pengguna baru
-    query = "INSERT INTO Register (username, password,email) VALUES (%s, %s, %s)"
-    cursor.execute(query, (username, email, password, no_telp))
+    query = "INSERT INTO Register (username, email, no_telpon, password) VALUES (%s,%s, %s, %s)"
+    cursor.execute(query, (username, email, no_telpon, password))
     usr.commit()
 
     usr.close()
@@ -51,7 +51,7 @@ def get_all_register():
     cursor = reg.cursor()
 
     # query untuk menampilkan
-    query = "SELECT * FROM t_users"
+    query = "SELECT * FROM t_kasir"
     cursor.execute(
         query,
     )
@@ -91,13 +91,14 @@ def registrasi():
     if request.method == "POST":
         username = request.form["username"]
         email = request.fotm["email"]
+        no_telpon = request.form["no_telpon"]
         password = request.form["password"]
-        no_telp = request.form["no_telp"]
+
 
         # verifikasi apakah username sudah digunakan
         db = connect_db()
         cursor = db.curs or ()
-        query = "SELECT * FROM t_users WHERE username=%s"
+        query = "SELECT * FROM t_kasir WHERE username=%s"
         cursor.execute(query, username)
         result = cursor.fetchone()
 
@@ -106,7 +107,7 @@ def registrasi():
             return render_template("register.html", error=error)
 
         # menambahkan pengguna baru
-        add_user(username, email, password, no_telp)
+        add_user(username, email, password, no_telpon)
         session["username"] = username
         return redirect("/login")
 
