@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../static/css/output.css" />
+    <title>Form Transaksi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="flex h-screen items-center justify-center bg-gray-100 font-['Lexend']"
+  >
+    <div
+      class="container mx-auto my-auto flex max-w-lg items-center justify-center"
+    >
+      <form
+        class="mx-auto w-full rounded-lg bg-white p-8 shadow ring-1 ring-blue-100 sm:p-6"
+      >
+        <div class="mb-4">
+          <h1 class="text-2xl font-bold text-blue-500">Form Transaksi</h1>
+        </div>
+        <div class="mb-4">
+          <label
+            class="mb-2 block text-sm font-medium text-gray-700"
+            for="Nama Produk"
+            >Nama Produk</label
+          >
+          <input
+            class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+            type="text"
+            id="Nama Produk"
+            name="Nama Produk"
+            placeholder="Nama Produk"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2 block text-sm font-medium text-gray-700" for="Stok"
+            >Harga Satuan</label
+          >
+          <input
+            class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+            type="text"
+            id="Harga Satuan"
+            name="Harga Satuan"
+            placeholder="Harga Satuan"
+          />
+        </div>
+        <div class="flex flex-wrap justify-between">
+          <div class="mb-4">
+            <label class="mb-2 block text-sm font-medium text-gray-700" for=" "
+              >Stok</label
+            >
+            <input
+              class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+              type="number"
+              id="Stok"
+              name="Stok"
+              placeholder="Stok"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="mb-2 block text-sm font-medium text-gray-700"
+              for="Total"
+              >Total</label
+            >
+            <input
+              class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+              type="text"
+              id="Total"
+              name="Total"
+              placeholder="Total"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label
+            class="mb-2 block text-sm font-medium text-gray-700"
+            for="Tanggal"
+            >Tanggal</label
+          >
+          <input
+            class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+            type="date"
+            id="Tanggal"
+            name="Tanggal"
+            placeholder="Tanggal"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="mb-2 block text-sm font-medium text-gray-700"
+            for="Kategori"
+            >Kategori</label
+          >
+          <select
+            class="dropdown w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+            type="tel"
+            id="Kategori"
+            name="Kategori"
+            autocomplete="Kategori"
+          >
+            <option
+              value="Listrik"
+              class="mb-2 block text-base font-light text-gray-700"
+            >
+              Listrik
+            </option>
+            <option
+              value="Bangunan"
+              class="mb-2 block text-base font-light text-gray-700"
+            >
+              Bangunan
+            </option>
+            <option
+              value="Pipa"
+              class="mb-2 block text-base font-light text-gray-700"
+            >
+              Pipa
+            </option>
+            <option
+              value="Kimia"
+              class="mb-2 block text-base font-light text-gray-700"
+            >
+              Kimia
+            </option>
+            <option
+              value="Kontruksi"
+              class="mb-2 block text-base font-light text-gray-700"
+            >
+              Konstruksi
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <p class="mb-2 block text-sm font-normal text-gray-700">
+            Terima kasih!
+          </p>
+        </div>
+        <a href="tran-admin.html">
+          <button
+            class="w-full rounded-lg bg-blue-500 px-4 py-2 text-base font-normal text-white transition duration-300 hover:bg-blue-600"
+            type="submit"
+          >
+            Input
+          </button>
+        </a>
+      </form>
+    </div>
+  </body>
+</html>
