@@ -1,55 +1,37 @@
+# file : models.py
+# definisi class untuk user dalam session
+
 import pymysql
 import config
 
 db = cursor = None
 
-class Users:
-    def __init__(self, username=None, email=None, no_telpon=None, password=None):
+class MPengguna():
+    def __init__(self, username=None, email=None, password=None):
         self.username = username
         self.email = email
-        self.no_telpon = no_telpon
         self.password = password
         
     def openDB(self):
         global db, cursor
         db = pymysql.connect(host=config.DB_HOST, user=config.DB_USER, password=config.DB_PASS, database=config.DB_NAME)
         cursor = db.cursor()
-
+        
     def closeDB(self):
         global db, cursor
         db.close()
         
-    def selectDB(self):
+    def auth(self):
         self.openDB()
-        cursor.execute("SELECT * FROM t_kasir")
-        container = []
-        for username, email, no_telp, password in cursor.fetchall():
-            container.append((username,email,no_telp, password))
-            self.closeDB()
-            
-        return container
-
-    def insertDB(self, data):
-        self.openDB()
-        cursor.execute("INSERT INTO t_kasir (username, email, no_telp, password) VALUES ('%s', '%s', '%s', '%s')" % data)
-        db.commit()
+        cursor.execute("SELECT * FROM t_kasir WHERE username = '%s' AND password = MDS('%s')") % (self.username, self.password)
+        count_account = cursor.fetchone()
         self.closeDB()
+        return True if count_account>0 else False
     
-    def getDBbyNo(self, no):
+    def add_user(self):
         self.openDB()
-        cursor.execute("SELECT * FROM bukutelepon WHERE no='%s'" % no)
-        data = cursor.fetchone()
-        return data
-    
-    def updateDB(self, data):
-        self.openDB()
-        cursor.execute("UPDATE bukutelepon SET nama='%s', no_telp='%s' WHERE no='%s'" % data)
-        db.commit()
-        self.closeDB()
-        
-    def deleteDB(self, no):
-        self.openDB()
-        print("DELETE FROM bukutelepon WHERE no='%s'" % no)
-        cursor.execute("DELETE FROM bukutelepon WHERE no='%s'" % no)
+        query = "INSERT INTO t_kasir (username, email, password) VALUES (%s, %s, %s)"
+        values = (self.username, self.email, self.password)
+        result = cursor.execute(query, values)
         db.commit()
         self.closeDB()

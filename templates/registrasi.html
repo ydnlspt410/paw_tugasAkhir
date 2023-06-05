@@ -17,6 +17,8 @@
     <div class="container absolute mx-auto my-auto items-center justify-center">
       <form
         class="mx-auto w-full max-w-sm rounded-lg bg-white p-8 shadow ring-1 ring-blue-100 sm:p-6"
+        action="{{ url_for('registrasi') }}"
+        method="post"
       >
         <div class="mb-6">
           <h1 class="mb-2 text-2xl font-bold text-blue-500">
@@ -42,7 +44,8 @@
           </p>
         </div>
         <div class="mb-4">
-          <label class="mb-2 block text-sm font-medium text-gray-700" for="name"
+          <label class="mb-2 block text-sm font-medium text-gray-700"
+            for="name"
             >Username</label
           >
           <input
@@ -65,20 +68,6 @@
             id="email"
             name="email"
             placeholder="email"
-          />
-        </div>
-        <div class="mb-4">
-          <label
-            class="mb-2 block text-sm font-medium text-gray-700"
-            for="email"
-            >No. Telepon</label
-          >
-          <input
-            class="w-full rounded-lg border border-gray-300 px-3 py-2 text-base font-light text-slate-500 placeholder-slate-300 ring-1 ring-slate-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
-            type="tel"
-            id="telpon"
-            name="telpon"
-            placeholder="nomor telpon"
           />
         </div>
         <div class="mb-4">
