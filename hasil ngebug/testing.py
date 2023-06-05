@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 import pymysql
 
 app = Flask(__name__)
-app.secret_key = '1234567890'
+app.secret_key = 'secret_key'
 
 # Fungsi koneksi database
 
@@ -35,7 +35,7 @@ def check_login(username, password):
 # Fungsi untuk menambahkan pengguna baru
 
 
-def add_user(username, password, email):
+def add_user(username, email, password):
     conn = connect_db()
     cursor = conn.cursor()
 
@@ -46,10 +46,10 @@ def add_user(username, password, email):
 
     conn.close()
 
-# fungsi untuk menampilkan semua data pada tabel registrasi
+# fungsi untuk menampilkan semua data pada tabel register
 
 
-def get_all_registrasi():
+def get_all_register():
     conn = connect_db()
     cursor = conn.cursor()
 
@@ -63,10 +63,6 @@ def get_all_registrasi():
     return result
 # Fungsi dashboard (hanya dapat diakses setelah login)
 
-
-@app.route('/')
-def homepage():
-    return render_template('homepage.html')
 # Fungsi login
 
 
@@ -84,23 +80,21 @@ def login():
             return redirect('/')
         else:
             error = 'Username atau password salah'
-            return render_template('login.html', error=error)
+            return render_template('log_in.html', error=error)
 
-    return render_template('login.html')
+    return render_template('log_in.html')
 
-# Fungsi registrasi
+# Fungsi register
 
 
-@app.route('/registrasi', methods=['GET', 'POST'])
-def registrasi():
+@app.route('/register', methods=['GET', 'POST'])
+def register():
     if request.method == 'POST':
         username = request.form['username']
         email = request.form['email']
-        no_telpon = request.form['no_telpon']
         password = request.form['password']
-        
-        # Memeriksa apakah username sudah digunakan
 
+        # Memeriksa apakah username sudah digunakan
         conn = connect_db()
         cursor = conn.cursor()
         query = "SELECT * FROM t_kasir WHERE username=%s"
@@ -109,14 +103,14 @@ def registrasi():
 
         if result:
             error = 'Username sudah digunakan'
-            return render_template('registrasi.html', error=error)
+            return render_template('register.html', error=error)
 
         # Menambahkan pengguna baru
         add_user(username, password, email)
         session['username'] = username
         return redirect('/login')
 
-    return render_template('registrasi.html')
+    return render_template('register.html')
 
 # Fungsi logout
 
