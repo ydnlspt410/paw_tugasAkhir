@@ -80,11 +80,11 @@ def login():
         # Memeriksa keberhasilan login
         if result:
             session['username'] = username
-            return redirect(url_for('dash-admin'))
-            # if username == 'admin':
-            #     return redirect('/dash-admin')
-            # else:
-            #     return redirect('/dash-kasir')
+            return redirect('/')
+            if username == 'admin':
+                return render_template('dash-admin.html')
+            else:
+                return render_template('dash-kasir.html')
         else:
             error = 'Username atau password salah'
             return render_template('login.html', error=error)
@@ -120,45 +120,7 @@ def registrasi():
     return render_template('registrasi.html')
 
 # Fungsi logout
-@app.route('/dash-admin')
-def admin():
-    return render_template('dash-admin.html')
 
-@app.route('/dash-kasir')
-def kasir():
-    return render_template('dash-kasir.html')
-
-@app.route('/form-input-inventaris')
-def input_inventaris():
-    return render_template('form-input-inventaris.html')
-
-@app.route('/form-input-pemasok')
-def input_pemasok():
-    return render_template('form-input-pema.html')
-
-@app.route('/form-input-tran')
-def transaksi():
-    return render_template('form-input-tran.html')
-
-@app.route('/inven-admin')
-def crud_admin():
-    return render_template('inven-admin.html')
-
-@app.route('/inven-kasir')
-def crud_kasir():
-    return render_template('inven-kasir.html')
-
-@app.route('/pema-admin')
-def pemasok():
-    return render_template('pema-admin.html')
-
-@app.route('/transaksi-admin')
-def transaksi_admin():
-    return render_template('tran-admin.html')
-
-@app.route('/transaksi-kasir')
-def transaksi_kasir():
-    return render_template('tran-kasir.html')
 
 @app.route('/logout')
 def logout():
